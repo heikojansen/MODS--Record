@@ -1,7 +1,8 @@
 package MODS::Collection;
 
-use warnings;
-use strict;
+use Moose;
+use Moose::Util::TypeConstraints;
+use PRANG::Graph;
 
 =head1 NAME
 
@@ -15,6 +16,21 @@ Version 0.01
 
 our $VERSION = '0.01';
 
+has_element 'records' => ( is           => 'rw',
+                           isa          => 'ArrayRef[MODS::Record]',
+                           xml_nodeName => { mods => "MODS::Record", },
+                           xml_min      => 1,
+                           traits       => ['Array'],
+                           handles      => {
+                                'get_records' => 'elements',
+                                'add_record'  => 'push',
+                                'has_records' => 'count',
+                            },
+);
+
+sub root_element { return 'modsCollection'; }
+
+with qw( PRANG::Graph MODS::Node );
 
 =head1 SYNOPSIS
 
@@ -27,26 +43,26 @@ Perhaps a little code snippet.
     my $foo = MODS::Collection->new();
     ...
 
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
-
 =head1 SUBROUTINES/METHODS
 
-=head2 function1
+=head2 B<parse( Str $xmlstr ) returns Object>
+
+Parses a XML string representing a modsCollection and returns a MODS::Collection
+object.
+
+=head2 B<add_record( MODS::Record $mods )>
+
+Adds an object of type MODS::Record to the collection.
+
+=head2 B<get_records() returns Array>
+
+Returns an array of all MODS::Record objects in the collection.
+
+=head2 B<has_records() returns Int>
+
+Returns the number of records stored in the collection.
 
 =cut
-
-sub function1 {
-}
-
-=head2 function2
-
-=cut
-
-sub function2 {
-}
 
 =head1 AUTHOR
 

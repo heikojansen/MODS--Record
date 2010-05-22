@@ -1,7 +1,33 @@
 package MODS::Record;
 
-use warnings;
-use strict;
+use Moose;
+use Moose::Util::TypeConstraints;
+use PRANG::Graph;
+
+use MODS::titleInfo;
+use MODS::name;
+use MODS::typeOfResource;
+use MODS::genre;
+use MODS::originInfo;
+use MODS::language;
+use MODS::physicalDescription;
+use MODS::abstract;
+use MODS::tableOfContents;
+use MODS::targetAudience;
+use MODS::note;
+use MODS::subject;
+use MODS::classification;
+
+use MODS::identifier;
+use MODS::location;
+use MODS::accessCondition;
+use MODS::part;
+use MODS::extension;
+use MODS::recordInfo;
+
+use MODS::relatedItem;
+
+subtype 'MODS::Record::choice0' => as join("|", map { "MODS::$_" } qw(titleInfo name typeOfResource genre originInfo language physicalDescription abstract tableOfContents targetAudience note subject classification relatedItem identifier location accessCondition part extension recordInfo));
 
 =head1 NAME
 
@@ -15,6 +41,42 @@ Version 0.01
 
 our $VERSION = '0.01';
 
+has_attr 'version' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', );
+
+has_attr 'ID' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', );
+
+has_element 'elems' => (
+    is => 'rw',
+    isa => 'ArrayRef[MODS::Record::choice0]',
+    xml_min => 1,
+    traits => ['Array'],
+    xml_nodeName => {
+        "titleInfo" => "MODS::titleInfo",
+        "name" => "MODS::name",
+        "typeOfResource" => "MODS::typeOfResource",
+        "genre" => "MODS::genre",
+        "originInfo" => "MODS::originInfo",
+        "language" => "MODS::language",
+        "physicalDescription" => "MODS::physicalDescription",
+        "abstract" => "MODS::abstract",
+        "tableOfContents" => "MODS::tableOfContents",
+        "targetAudience" => "MODS::targetAudience",
+        "note" => "MODS::note",
+        "subject" => "MODS::subject",
+        "classification" => "MODS::classification",
+        "relatedItem" => "MODS::relatedItem",
+        "identifier" => "MODS::identifier",
+        "location" => "MODS::location",
+        "accessCondition" => "MODS::accessCondition",
+        "part" => "MODS::part",
+        "extension" => "MODS::extension",
+        "recordInfo" => "MODS::recordInfo",
+    },
+);
+
+sub root_element { return 'mods'; }
+
+with qw( PRANG::Graph MODS::Node );
 
 =head1 SYNOPSIS
 
@@ -26,11 +88,6 @@ Perhaps a little code snippet.
 
     my $foo = MODS::Record->new();
     ...
-
-=head1 EXPORT
-
-A list of functions that can be exported.  You can delete this section
-if you don't export anything, such as for a purely object-oriented module.
 
 =head1 SUBROUTINES/METHODS
 
