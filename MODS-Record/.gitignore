@@ -12,3 +12,4 @@ pod2htm*.tmp
 MODS-Record-*
 META.yml
 inc/
+*~
