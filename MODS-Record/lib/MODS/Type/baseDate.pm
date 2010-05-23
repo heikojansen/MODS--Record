@@ -10,11 +10,6 @@ has_element 'text' => (
     coerce => 1,
 );
 
-has_attr 'encoding' => (
-    is => 'rw',
-    isa => 'MODS::Type::baseDateTypeEncoding',
-);
-
 has_attr 'qualifier' => (
     is => 'rw',
     isa => 'MODS::Type::baseDateTypeQualifier',
@@ -23,6 +18,11 @@ has_attr 'qualifier' => (
 has_attr 'point' => (
     is => 'rw',
     isa => 'MODS::Type::baseDateTypePoint',
+);
+
+has_attr 'encoding' => (
+    is => 'rw',
+    isa => 'MODS::Type::baseDateTypeEncoding',
 );
 
 1;

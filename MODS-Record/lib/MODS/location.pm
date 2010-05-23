@@ -26,13 +26,13 @@ has_element 'url' => (
 has_element 'holdingSimple' => (
     is => 'rw',
     isa => 'MODS::location::holdingSimple',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 has_element 'holdingExternal' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::Whatever',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 1;

@@ -5,6 +5,9 @@ use PRANG::Graph;
 
 with qw( MODS::Node );
 
-has_element 'text' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', xml_nodeName => '', coerce => 1, );
+# not using PRANG::XMLSchema::token:
+# <nonSort>The </nonSort>
+# => The trailing space needs to be kept!
+has_element 'text' => ( is => 'rw', isa => 'Str', xml_nodeName => '', coerce => 1, );
 
 1;

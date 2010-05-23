@@ -56,7 +56,7 @@ subtype 'MODS::Type::digitalOrigin' => as 'PRANG::XMLSchema::token' => where {
 		or $_ eq 'digitized other analog';
 };
 
-subtype 'MODS::Type::relatedItemTypeType' => as 'PRANG::XMLSchema::token' => where {
+subtype 'MODS::Type::relatedItemType' => as 'PRANG::XMLSchema::token' => where {
 	       $_ eq 'preceding'
 		or $_ eq 'succeeding'
 		or $_ eq 'original'

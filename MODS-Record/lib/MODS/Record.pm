@@ -17,7 +17,7 @@ use MODS::targetAudience;
 use MODS::note;
 use MODS::subject;
 use MODS::classification;
-
+#use MODS::relatedItem; # cf. below
 use MODS::identifier;
 use MODS::location;
 use MODS::accessCondition;
@@ -25,13 +25,13 @@ use MODS::part;
 use MODS::extension;
 use MODS::recordInfo;
 
-use MODS::relatedItem;
+use MODS::relatedItem; # put here so that the subtype declaration in MODS::relatedItem works
 
 subtype 'MODS::Record::choice0' => as join("|", map { "MODS::$_" } qw(titleInfo name typeOfResource genre originInfo language physicalDescription abstract tableOfContents targetAudience note subject classification relatedItem identifier location accessCondition part extension recordInfo));
 
 =head1 NAME
 
-MODS::Record - The great new MODS::Record!
+MODS::Record - Easily parse and create MODS records
 
 =head1 VERSION
 
@@ -44,6 +44,13 @@ our $VERSION = '0.01';
 has_attr 'version' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', );
 
 has_attr 'ID' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', );
+
+has_attr 'schemaLocation' => (
+    is => 'rw',
+    isa => 'PRANG::XMLSchema::token',
+    xmlns => 'http://www.w3.org/2001/XMLSchema-instance',
+    xml_name => 'schemaLocation',
+);
 
 has_element 'elems' => (
     is => 'rw',

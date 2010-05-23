@@ -49,7 +49,7 @@ has_attr 'type' => (
 
 has_element 'elems' => (
     is => 'rw',
-    isa => 'ArrayRef[MODS::Type::RootElemChoice]',
+    isa => 'ArrayRef[MODS::relatedItem::choice0]',
     xml_min => 0,
     traits => ['Array'],
     xml_nodeName => {

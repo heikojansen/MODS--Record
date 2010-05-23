@@ -14,25 +14,25 @@ has_attr 'unit' => (
 has_element 'start' => (
     is => 'rw',
     isa => 'MODS::part::extent::start',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 has_element 'end' => (
     is => 'rw',
     isa => 'MODS::part::extent::end',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 has_element 'total' => (
     is => 'rw',
     isa => 'MODS::part::extent::total',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 has_element 'list' => (
     is => 'rw',
     isa => 'MODS::part::extent::list',
-    xml_min => 0,
+    xml_required => 0,
 );
 
 1;
