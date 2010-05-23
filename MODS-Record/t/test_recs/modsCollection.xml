@@ -1,0 +1,755 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modsCollection xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.loc.gov/mods/v3" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+  <mods version="3.0">
+    <titleInfo>
+      <title>Models, Fantasies and Phantoms of Transition</title>
+    </titleInfo>
+    <name type="personal">
+      <namePart type="given">Ash</namePart>
+      <namePart type="family">Amin</namePart>
+      <role>
+        <roleTerm type="text">author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Post-Fordism</title>
+        <subTitle>A Reader</subTitle>
+      </titleInfo>
+      <name type="personal">
+        <namePart type="given">Ash</namePart>
+        <namePart type="family">Amin</namePart>
+        <role>
+          <roleTerm type="text">editor</roleTerm>
+        </role>
+      </name>
+      <originInfo>
+        <dateIssued>1994</dateIssued>
+        <publisher>Blackwell Publishers</publisher>
+        <place>
+          <placeTerm type="text">Oxford</placeTerm>
+        </place>
+      </originInfo>
+      <part>
+        <extent unit="page">
+          <start>23</start>
+          <end>45</end>
+        </extent>
+      </part>
+    </relatedItem>
+    <identifier>Amin1994a</identifier>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Sound and fury :</title>
+      <subTitle>the making of the punditocracy /</subTitle>
+    </titleInfo>
+    <name type="personal">
+      <namePart>Alterman, Eric</namePart>
+      <role>
+        <roleTerm type="text">creator</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">bibliography</genre>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">nyu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">Ithaca, N.Y</placeTerm>
+      </place>
+      <publisher>Cornell University Press</publisher>
+      <dateIssued>c1999</dateIssued>
+      <dateIssued encoding="marc">1999</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>vii, 322 p. ; 23 cm.</extent>
+    </physicalDescription>
+    <note type="statement of responsibility">Eric Alterman.</note>
+    <note>Includes bibliographical references (p. 291-312) and index.</note>
+    <subject authority="lcsh">
+      <topic>Journalism</topic>
+      <topic>Political aspects</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <geographic>United States</geographic>
+      <topic>Politics and government</topic>
+      <temporal>20th century.</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Mass media</topic>
+      <topic>Political aspects</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Television and politics</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Press and politics</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Talk shows</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <classification authority="lcc">PN4888.P6 A48 1999</classification>
+    <classification edition="21" authority="ddc">071/.3</classification>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">990730</recordCreationDate>
+      <recordChangeDate encoding="iso8601">20000406144503.0</recordChangeDate>
+      <recordIdentifier>11761548</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Papers from the First International Workshop on Plasma-Based Ion Implantation :</title>
+      <subTitle>4-6 August 1993, University of Wisconsin--Madison, Madison, Wisconsin /</subTitle>
+    </titleInfo>
+    <name type="conference">
+      <namePart>International Workshop on Plasma-Based Ion Implantation 1993 : University of Wisconsin--Madison)</namePart>
+      <role>
+        <roleTerm type="text">creator</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart>Conrad, John R</namePart>
+    </name>
+    <name type="personal">
+      <namePart>Sridharan, Kumar</namePart>
+    </name>
+    <name type="corporate">
+      <namePart>Applied Science and Technology (ASTeX), Inc</namePart>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">bibliography</genre>
+    <genre authority="marcgt">conference publication</genre>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">nyu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">New York</placeTerm>
+      </place>
+      <publisher>Published for the American Vacuum Society by the American Institute of Physics</publisher>
+      <dateIssued>1994</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>p. 813-998 : ill. ; 30 cm.</extent>
+    </physicalDescription>
+    <note type="statement of responsibility">sponsored by Applied Science and Technology (ASTeX), Inc. ... [et al.] ; editors for the workshop, John R. Conrad, Kumar Sridharan.</note>
+    <note>"Published in both 1994 March/April issue of the Journal of vacuum science and technology B, vol. 12, no. 2"--T.p. verso.</note>
+    <note>Includes bibliographical references and index.</note>
+    <subject authority="lcsh">
+      <topic>Ion implantation</topic>
+      <topic>Congresses</topic>
+    </subject>
+    <classification authority="lcc">TS695.25 .I57 1993</classification>
+    <classification edition="21" authority="ddc">621.3815/2</classification>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Journal of vacuum science &amp; technology. B, Microelectronics and nanometer structures processing, measurement and phenomena.</title>
+        <partNumber>2nd ser., v. 12, no. 2</partNumber>
+      </titleInfo>
+    </relatedItem>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">940504</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19970618142736.9</recordChangeDate>
+      <recordIdentifier>4968605</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Campbell County, Wyoming /</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Campbell County Chamber of Commerce</namePart>
+    </name>
+    <typeOfResource>cartographic</typeOfResource>
+    <genre authority="marcgt">map</genre>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">wyu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">[Gillette, Wyo.]</placeTerm>
+      </place>
+      <publisher>Campbell County Chamber of Commerce</publisher>
+      <dateIssued>[1982?]</dateIssued>
+      <dateIssued encoding="marc">1982</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <extent>1 map ; 33 x 15 cm.</extent>
+    </physicalDescription>
+    <note type="statement of responsibility">this map reproduced by Campbell County Chamber of Commerce.</note>
+    <note>In lower right corner: Kintzels-Casper.</note>
+    <subject authority="lcsh">
+      <geographic>Campbell County (Wyo.)</geographic>
+      <topic>Maps</topic>
+    </subject>
+    <classification authority="lcc">G4263.C3 1982 .C3</classification>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">830222</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19830426000000.0</recordChangeDate>
+      <recordIdentifier>5466714</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Massachusetts death and marriage records, 1837-1897.</title>
+    </titleInfo>
+    <typeOfResource manuscript="yes" collection="yes">mixed material</typeOfResource>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">mau</placeTerm>
+      </place>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <extent>2</extent>
+    </physicalDescription>
+    <abstract>Records of deaths and marriages in Millbury and Springfield, Mass.</abstract>
+    <note>Purchase, 1946.</note>
+    <note>Forms part of: Miscellaneous Manuscripts collection.</note>
+    <subject authority="lcsh">
+      <topic>Registers of births, etc</topic>
+      <geographic>Massachusetts</geographic>
+      <geographic>Millbury.</geographic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Registers of births, etc</topic>
+      <geographic>Massachusetts</geographic>
+      <geographic>Springfield.</geographic>
+    </subject>
+    <location>
+      <physicalLocation>Library of Congress Manuscript Division</physicalLocation>
+    </location>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">830926</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19991213115810.0</recordChangeDate>
+      <recordIdentifier>5810505</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <nonSort>The </nonSort>
+      <title>Cast iron story [motion picture] /</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Walter J. Klein Company</namePart>
+    </name>
+    <typeOfResource>moving image</typeOfResource>
+    <genre authority="marcgt">motion picture</genre>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">ncu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">Charlotte, N.C</placeTerm>
+      </place>
+      <publisher>W.J. Klein Co</publisher>
+      <dateIssued>1978</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <extent>1 film reel (15 min.) : sd., col. ; 16 mm.</extent>
+    </physicalDescription>
+    <abstract>Shows how cast iron bathtubs are manufactured, illustrating each step from the sculpturing of the wood patterns through the casting and enameling processes.</abstract>
+    <targetAudience>adult</targetAudience>
+    <note type="statement of responsibility">Walter J. Klein Company.</note>
+    <note>Title from data sheet.</note>
+    <note>Intended audience: Junior high school students through adults.</note>
+    <note>Issued also as super 8 mm. and as videorecording.</note>
+    <subject authority="lcsh">
+      <topic>Bathtubs</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Cast-iron</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Iron-founding</topic>
+    </subject>
+    <subject authority="lcshac">
+      <topic>Bathtubs</topic>
+    </subject>
+    <subject authority="lcshac">
+      <topic>&lt;B&gt;Hello World&lt;/B&gt;Cast-iron</topic>
+    </subject>
+    <subject authority="lcshac">
+      <topic>Iron founding</topic>
+    </subject>
+    <classification authority="lcc">TH6493</classification>
+    <classification edition="11" authority="ddc">683</classification>
+    <recordInfo>
+      <recordContentSource>Walter J. Klein Co.</recordContentSource>
+      <recordCreationDate encoding="marc">820106</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19980501135351.7</recordChangeDate>
+      <recordIdentifier>11510774</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>3 Viennese arias :</title>
+      <subTitle>for soprano, obbligato clarinet in B flat, and piano /</subTitle>
+    </titleInfo>
+    <name type="personal">
+      <namePart>Lawson, Colin (Colin James)</namePart>
+    </name>
+    <typeOfResource>notated music</typeOfResource>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">enk</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">London</placeTerm>
+      </place>
+      <publisher>Nova Music</publisher>
+      <dateIssued>c1984</dateIssued>
+      <dateIssued encoding="marc">1984</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">ita</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>1 score (12 p.) + 2 parts ; 31 cm.</extent>
+    </physicalDescription>
+    <tableOfContents>Tutto in pianto il cor struggete / Emperor Joseph I -- E sempre inquieto quel core infelice : from Endimione / G. Bononcini -- L'adorata genitrice : from Muzio [i.e. Mutio] Scevola / G. Bononcini.</tableOfContents>
+    <note type="statement of responsibility">G.B. Bononcini and Emperor Joseph I ; edited by Colin Lawson.</note>
+    <note>Opera excerpts.</note>
+    <note>Acc. arr. for piano; obbligato for the 2nd-3rd excerpts originally for chalumeau.</note>
+    <note>Italian words.</note>
+    <note>Cover title.</note>
+    <note>The 1st excerpt composed for inclusion in M.A. Ziani's Chilonida.</note>
+    <note>Texts with English translations on cover p. [2].</note>
+    <subject authority="lcsh">
+      <topic>Operas</topic>
+      <topic>Excerpts, Arranged</topic>
+      <topic>Scores and parts</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Songs (High voice) with instrumental ensemble</topic>
+      <topic>Scores and parts</topic>
+    </subject>
+    <classification authority="lcc">M1506 .A14 1984</classification>
+    <relatedItem type="series">
+      <titleInfo>
+        <title>Music for voice and instrument</title>
+      </titleInfo>
+    </relatedItem>
+    <relatedItem type="constituent">
+      <titleInfo>
+        <title>Tutto in pianto il cor struggete; arr. 1984.</title>
+      </titleInfo>
+      <name type="personal">
+        <namePart>Joseph I, Holy Roman Emperor,</namePart>
+        <namePart type="date">1678-1711</namePart>
+      </name>
+    </relatedItem>
+    <relatedItem type="constituent">
+      <titleInfo>
+        <title>Endimione. arr. 1984.</title>
+        <partName>E sempre inquieto quel core infelice; arr. 1984.</partName>
+      </titleInfo>
+      <name type="personal">
+        <namePart>Bononcini, Giovanni,</namePart>
+        <namePart type="date">1670-1747</namePart>
+      </name>
+    </relatedItem>
+    <relatedItem type="constituent">
+      <titleInfo>
+        <title>Mutio Scevola. arr. 1984.</title>
+        <partName>Adorata genitrice; arr. 1984.</partName>
+      </titleInfo>
+      <name type="personal">
+        <namePart>Bononcini, Giovanni,</namePart>
+        <namePart type="date">1670-1747</namePart>
+      </name>
+    </relatedItem>
+    <relatedItem type="constituent">
+      <titleInfo>
+        <title>Three Viennese arias.</title>
+      </titleInfo>
+    </relatedItem>
+    <relatedItem type="constituent">
+      <titleInfo>
+        <title>Viennese arias.</title>
+      </titleInfo>
+    </relatedItem>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">850813</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19950601141653.9</recordChangeDate>
+      <recordIdentifier>5594130</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <nonSort>The</nonSort>
+      <title>Urban Question as a Scale Question</title>
+      <subTitle>Reflections on Henri Lefebre, Urban Theory and the Politics of Scale</subTitle>
+    </titleInfo>
+    <name type="personal">
+      <namePart type="given">Neil</namePart>
+      <namePart type="family">Brenner</namePart>
+      <role>
+        <roleTerm type="text">author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre>article</genre>
+    <originInfo>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>International Journal of Urban and Regional Research</title>
+      </titleInfo>
+      <originInfo>
+        <issuance>continuing</issuance>
+      </originInfo>
+      <part>
+        <detail type="volume">
+          <number>24</number>
+        </detail>
+        <detail type="issue">
+          <number>2</number>
+          <caption>no.</caption>
+        </detail>
+        <extent unit="pages">
+          <start>361</start>
+          <end>378</end>
+        </extent>
+        <date>2000</date>
+      </part>
+    </relatedItem>
+    <identifier>BrennerN2000a</identifier>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Emergence and Dissolvence in the Self-Organization of Complex Systems</title>
+    </titleInfo>
+    <name type="personal">
+      <namePart type="family">Testa</namePart>
+      <namePart type="given">Bernard</namePart>
+      <role>
+        <roleTerm>author</roleTerm>
+      </role>
+    </name>
+    <name type="personal">
+      <namePart type="family">Kier</namePart>
+      <namePart type="given">Lamont B.</namePart>
+      <role>
+        <roleTerm>author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <identifier type="uri">http://www.mdpi.org/entropy/papers/e2010001.pdf</identifier>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Entropy</title>
+      </titleInfo>
+      <originInfo>
+        <issuance>continuing</issuance>
+      </originInfo>
+      <part>
+        <detail type="volume">
+          <number>2</number>
+        </detail>
+        <detail type="issue">
+          <caption>no.</caption>
+          <number>1</number>
+        </detail>
+        <extent unit="pages">
+          <start>17</start>
+          <end>17</end>
+        </extent>
+        <date>2000</date>
+      </part>
+    </relatedItem>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>Fifth-Grade Boys' Decisions about Participation in Sports Activities</title>
+    </titleInfo>
+    <name type="personal">
+      <namePart type="family">Conley</namePart>
+      <namePart type="given">Alice</namePart>
+      <role>
+        <roleTerm type="text">author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Non-subject-matter Outcomes of Schooling</title>
+      </titleInfo>
+      <name>
+        <namePart>Good, Thomas L.</namePart>
+        <role>
+          <roleTerm>editor</roleTerm>
+        </role>
+      </name>
+      <note type="statement of responsibility">ed. Thomas L. Good</note>
+      <originInfo>
+        <issuance>continuing</issuance>
+      </originInfo>
+      <part>
+        <detail type="title">
+          <title>Special issue, Elementary School Journal</title>
+        </detail>
+        <detail type="volume">
+          <number>99</number>
+        </detail>
+        <detail type="issue">
+          <number>5</number>
+          <caption>no.</caption>
+        </detail>
+        <extent unit="pages">
+          <start>131</start>
+          <end>146</end>
+        </extent>
+        <date>1999</date>
+      </part>
+    </relatedItem>
+  </mods>
+  <mods version="3.0">
+    <titleInfo>
+      <title>2700 MHz observations of 4c radio sources in the declination zone +4 to -4</title>
+    </titleInfo>
+    <name type="personal">
+      <namePart type="family">Wall</namePart>
+      <namePart type="given">J. V.</namePart>
+      <role>
+        <roleTerm type="text">author</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <relatedItem type="host">
+      <titleInfo>
+        <title>Australian Journal of Physics and Astronphysics</title>
+      </titleInfo>
+      <titleInfo type="abbreviated">
+        <title>Australian J. Phys. Astronphys.</title>
+      </titleInfo>
+      <originInfo>
+        <issuance>continuing</issuance>
+      </originInfo>
+      <genre>academic journal</genre>
+      <part>
+        <detail type="supplement">
+          <caption>Suppl. no.</caption>
+          <number>20</number>
+        </detail>
+        <date>1971</date>
+      </part>
+    </relatedItem>
+  </mods>
+  <mods version="3.0" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+    <titleInfo>
+      <title>Directory of computer assisted research in musicology.</title>
+    </titleInfo>
+    <titleInfo type="alternative">
+      <title>Computer assisted research in musicology</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Center for Computer Assisted Research in the Humanities</namePart>
+    </name>
+    <typeOfResource>text</typeOfResource>
+    <genre authority="marcgt">directory</genre>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">cau</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">Menlo Park, CA</placeTerm>
+      </place>
+      <publisher>Center for Computer Assisted Research in the Humanities</publisher>
+      <dateIssued>-1988</dateIssued>
+      <dateIssued encoding="marc" point="start">1985</dateIssued>
+      <dateIssued encoding="marc" point="end">1988</dateIssued>
+      <issuance>continuing</issuance>
+      <frequency>Annual</frequency>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">print</form>
+      <extent>4 v. : ill., music ; 26 cm.</extent>
+    </physicalDescription>
+    <note>Description based on: 1986.</note>
+    <subject authority="lcsh">
+      <topic>Musicology</topic>
+      <topic>Data processing</topic>
+      <topic>Periodicals</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Music</topic>
+      <topic>Bibliography</topic>
+      <topic>Periodicals</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Musicians</topic>
+      <topic>Directories</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Musicologists</topic>
+      <topic>Directories</topic>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Musicology</topic>
+      <topic>Data processing</topic>
+      <topic>Directories</topic>
+    </subject>
+    <classification authority="lcc">ML73 .D57</classification>
+    <classification edition="19" authority="ddc">780/.01/02584</classification>
+    <relatedItem type="succeeding">
+      <titleInfo>
+        <title>Computing in musicology</title>
+      </titleInfo>
+    </relatedItem>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">861202</recordCreationDate>
+      <recordChangeDate encoding="iso8601">20020320050438.0</recordChangeDate>
+      <recordIdentifier>11315879</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <mods version="3.0" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+    <titleInfo>
+      <title>2001 bluegrass odyssey [sound recording].</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Roustabouts (Musical group)</namePart>
+      <role>
+        <roleTerm type="code">prf</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>sound recording</typeOfResource>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">ncu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">Charlotte, NC</placeTerm>
+      </place>
+      <publisher>Lamon Records</publisher>
+      <dateIssued>p1980</dateIssued>
+      <dateIssued encoding="marc">1980</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <extent>1 sound disc : analog, 33 1/3 rpm ; 12 in.</extent>
+    </physicalDescription>
+    <tableOfContents>Bluegrass odyssey -- Hills of Tennessee -- Sassafrass -- Muddy river -- Take your shoes off Moses -- Don't let Smokey Mountain smoke get in your eyes -- Farewell party -- Faded love -- Super sonic bluegrass -- Old love letters -- Will the circle be unbroken.</tableOfContents>
+    <note>Brief record.</note>
+    <note type="performers">Performed by the Roustabouts.</note>
+    <subject authority="lcsh">
+      <topic>Country music</topic>
+      <temporal>1971-1980.</temporal>
+    </subject>
+    <subject authority="lcsh">
+      <topic>Bluegrass music</topic>
+      <temporal>1971-1980.</temporal>
+    </subject>
+    <classification authority="lcc">Lamon Records LR-4280</classification>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">940829</recordCreationDate>
+      <recordChangeDate encoding="iso8601">19940830080228.8</recordChangeDate>
+      <recordIdentifier>5718053</recordIdentifier>
+    </recordInfo>
+  </mods>
+  <!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Jacqueline Radebaugh (Library of Congress) -->
+  <mods version="3.0" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+    <titleInfo>
+      <nonSort>The </nonSort>
+      <title>American ballroom companion [computer file] :</title>
+      <subTitle>dance instruction manuals, ca. 1600-1920 /</subTitle>
+    </titleInfo>
+    <titleInfo type="alternative">
+      <title>Dance instruction manuals, ca. 1600-1920</title>
+    </titleInfo>
+    <name type="corporate">
+      <namePart>Library of Congress</namePart>
+      <namePart>Music Division.</namePart>
+    </name>
+    <name type="corporate">
+      <namePart>Library of Congress</namePart>
+      <namePart>National Digital Library Program.</namePart>
+    </name>
+    <typeOfResource>software, multimedia</typeOfResource>
+    <originInfo>
+      <place>
+        <placeTerm authority="marccountry" type="code">dcu</placeTerm>
+      </place>
+      <place>
+        <placeTerm type="text">[Washington, D.C</placeTerm>
+      </place>
+      <publisher>Library of Congress</publisher>
+      <dateIssued>1998-]</dateIssued>
+      <dateIssued encoding="marc" point="start">1998</dateIssued>
+      <dateIssued encoding="marc" point="end">9999</dateIssued>
+      <issuance>monographic</issuance>
+    </originInfo>
+    <language>
+      <languageTerm authority="iso639-2b" type="code">eng</languageTerm>
+    </language>
+    <physicalDescription>
+      <form authority="marcform">electronic</form>
+      <form>Computer data and programs.</form>
+    </physicalDescription>
+    <abstract>Presents over two hundred social dance manuals, pocket-sized books with diagrams used by itinerant dancing masters to teach the American gentry the latest dance steps. Includes anti-dance manuals as well as treatises on etiquette. Offered as part of the American Memory online resource compiled by the National Digital Library Program of the Library of Congress.</abstract>
+    <note type="statement of responsibility">Music Division, Library of Congress.</note>
+    <note>Title from title screen dated Mar. 23, 1998.</note>
+    <note>System requirements: World Wide Web (WWW) browser software.</note>
+    <note>Mode of access: Internet.</note>
+    <subject authority="lcsh">
+      <topic>Ballroom dancing</topic>
+      <geographic>United States.</geographic>
+    </subject>
+    <classification authority="lcc">GV1623</classification>
+    <classification edition="13" authority="ddc">793.3</classification>
+    <location>
+      <url>http://memory.loc.gov/ammem/dihtml/dihome.html</url>
+    </location>
+    <recordInfo>
+      <recordContentSource>DLC</recordContentSource>
+      <recordCreationDate encoding="marc">980323</recordCreationDate>
+      <recordChangeDate encoding="iso8601">20010614091341.0</recordChangeDate>
+      <recordIdentifier>5004836</recordIdentifier>
+    </recordInfo>
+  </mods>
+</modsCollection>
