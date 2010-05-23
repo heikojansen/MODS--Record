@@ -16,6 +16,13 @@ Version 0.01
 
 our $VERSION = '0.01';
 
+has_attr 'schemaLocation' => (
+    is => 'rw',
+    isa => 'PRANG::XMLSchema::token',
+    xmlns => 'http://www.w3.org/2001/XMLSchema-instance',
+    xml_name => 'schemaLocation',
+);
+
 has_element 'records' => ( is           => 'rw',
                            isa          => 'ArrayRef[MODS::Record]',
                            xml_nodeName => { mods => "MODS::Record", },
