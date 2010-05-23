@@ -9,7 +9,7 @@ version      '0.01';
 perl_version '5.010'; # cf. PRANG 
 
 # Specific dependencies
-requires       'File::ShareDir' => '1.02';
+requires       'File::ShareDir' => '1.00';
 requires       'PRANG' => '0.07';
 test_requires  'Test::More';
 test_requires  'XML::Compare' => '0.02';
