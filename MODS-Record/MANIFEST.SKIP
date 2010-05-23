@@ -1,0 +1,10 @@
+\.bak$
+~$
+Makefile$
+^\.git
+^blib/
+-stamp$
+\.tar
+pm_to_blib
+MODS-Record-
+\.(old|orig|rej)$
