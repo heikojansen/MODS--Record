@@ -5,17 +5,15 @@ use PRANG::Graph;
 use Moose::Util::TypeConstraints;
 use PRANG::XMLSchema::Types;
 
-=pod
-  <attributeGroup name="simpleLink">
-    <attribute name="type" type="string" fixed="simple" form="qualified" />
-    <attribute ref="xlink:href" use="optional" />
-    <attribute ref="xlink:role" use="optional" />
-    <attribute ref="xlink:arcrole" use="optional" />
-    <attribute ref="xlink:title" use="optional" />
-    <attribute ref="xlink:show" use="optional" />
-    <attribute ref="xlink:actuate" use="optional" />
-  </attributeGroup>
-=cut
+#  <attributeGroup name="simpleLink">
+#    <attribute name="type" type="string" fixed="simple" form="qualified" />
+#    <attribute ref="xlink:href" use="optional" />
+#    <attribute ref="xlink:role" use="optional" />
+#    <attribute ref="xlink:arcrole" use="optional" />
+#    <attribute ref="xlink:title" use="optional" />
+#    <attribute ref="xlink:show" use="optional" />
+#    <attribute ref="xlink:actuate" use="optional" />
+#  </attributeGroup>
 
 type 'MODS::Type::simpleLinkAttrGrp::xlink_type' => where { not( defined($_) ) or $_ eq 'simple' };
 
