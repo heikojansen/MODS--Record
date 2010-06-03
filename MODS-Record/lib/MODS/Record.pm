@@ -27,13 +27,9 @@ use MODS::part;
 use MODS::extension;
 use MODS::recordInfo;
 
-#use MODS::relatedItem; # put here so that the subtype declaration in MODS::relatedItem works
-
-#subtype 'MODS::Record::choice0' => as join("|", map { "MODS::$_" } qw(titleInfo name typeOfResource genre originInfo language physicalDescription abstract tableOfContents targetAudience note subject classification relatedItem identifier location accessCondition part extension recordInfo));
-
 =head1 NAME
 
-MODS::Record - Easily parse and create MODS records
+MODS::Record - Easily parse, create, and manipulate MODS records
 
 =head1 VERSION
 
@@ -94,6 +90,7 @@ has_element 'elems' => (
     },
 );
 
+# TODO This is ugly - find out if there's a better way
 sub BUILD {
     my $self = shift;
     unless ( $self->{'ns'} ) {
@@ -181,25 +178,77 @@ around 'parse' => sub {
         }
     }
     else {
-        die "Invalid arguments supllied to 'MODS::Record->parse()'";
+        die "Invalid arguments supplied to 'MODS::Record->parse()'";
     }
     return;
 };
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+This module allows you to work with MODS records.
+It relies on the B<mods> element as defined in the MODS schema.
 
-Perhaps a little code snippet.
+You can create new records from scratch:
 
     use MODS::Record;
 
-    my $foo = MODS::Record->new();
-    ...
+    my $rec = MODS::Record->new(
+        [
+            { titleInfo         => [ { title => 'Main title' }, { subTitle => 'Sub title' } ] },
+            { typeOfResource    => { text => 'text', manuscript => 'yes', } },
+            { genre             => 'fiction' },
+            { note              => 'Some text' },
+        ]
+    );
+    say $rec->to_xml(1);
+
+Or you can parse and manipulate existing collections:
+
+    use MODS::Record;
+
+    # tbd.
+
+=head1 B<CAUTION>
+
+Currently this module can only successfully parse records which
+conform to the MODS schema version 3.3. 
+This does include a large percentage of records that have been created
+in conformance to older schema versions but it might be the case, that
+
+=over 4
+
+=item  B<a)> records conforming to older schema versions are rejected by 
+this module and
+
+=item  B<b)> records claiming to conform to older schema versions but failing
+to do so are accepted by this module.
+
+=back
+
+There are plans to create specific classes for the different schema 
+versions from 3.0 onward and to extend the support to the emerging
+3.4 version, but this may take some time.
 
 =head1 SUBROUTINES/METHODS
 
-=head2 function1
+=head2 B<parse( ( Str $xmlstr | ("string"|"fh"|"file"|"doc") $var ) returns Object>
+
+Parses a XML string representing a modsCollection and returns a MODS::Collection
+object.
+Parameters can be either a single argument representing a XML string or two 
+arguments with the first one determining what kind of value the second parameter
+contains: either a XML string, or an already opened file handle, or a file name,
+or an object of type XML::LibXML::Node (or a subtype).
+
+=head2 B<to_xml( Bool $format ) returns Str>
+
+Returns a XML string containing the serialised collection.
+If a TRUE value is provided as parameter the XML is nicely indented.
+The method is inherited from C<PRANG>.
+
+=head2 get_elements
+
+...
 
 =cut
 
@@ -209,13 +258,6 @@ sub get_elements {
 
     die "Invalid element name '$elem'" unless $elem =~ m/\A(titleInfo|name|typeOfResource|genre|originInfo|language|physicalDescription|abstract|tableOfContents|targetAudience|note|subject|classification|relatedItem|identifier|location|accessCondition|part|extension|recordInfo)\Z/o;
     return [ $self->filter( sub { ref $_ eq "MODS::$elem" } ) ];
-}
-
-=head2 function2
-
-=cut
-
-sub function2 {
 }
 
 =head1 AUTHOR

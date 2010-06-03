@@ -41,6 +41,41 @@ has_element 'records' => ( is           => 'rw',
                             },
 );
 
+around 'parse' => sub {
+    my $orig = shift;
+    my $self = shift;
+
+    if ( @_ == 1 ) {
+        return $self->$orig( shift );
+    }
+    elsif ( @_ == 2 ) {
+        my ( $key, $value ) = @_;
+        if ( $key eq 'string' ) {
+            return $self->$orig( $value );
+        }
+        elsif ( $key eq 'fh' ) {
+            my $str = do { local $/; <$value> };
+            return $self->$orig( $str );
+        }
+        elsif ( $key eq 'file' ) {
+            open ( my $fh, '<', $value ) or die "Can't open file '$value': $!";
+            my $str = do { local $/; <$fh> };
+            close $fh;
+            return $self->$orig( $str );
+        }
+        elsif ( $key eq 'doc' ) {
+            if ( not $value->isa('XML::LibXML::Document') ) {
+                die "Parameter supplied is not a document object of type 'XML::LibXML::Document'"; 
+            }
+            return $self->$orig( $value->toString() );
+        }
+    }
+    else {
+        die "Invalid arguments supplied to 'MODS::Record->parse()'";
+    }
+    return;
+};
+
 sub root_element { return 'modsCollection'; }
 
 with qw( PRANG::Graph MODS::Node );
@@ -66,14 +101,25 @@ Or you can parse and manipulate existing collections:
 
     my $col = MODS::Collection->parse($str);
     say $col->num_records() . " in collection" if ! $col->is_empty;
+    say $col->to_xml();
 
 
 =head1 SUBROUTINES/METHODS
 
-=head2 B<parse( Str $xmlstr ) returns Object>
+=head2 B<parse( ( Str $xmlstr | ("string"|"fh"|"file"|"doc") $var ) returns Object>
 
 Parses a XML string representing a modsCollection and returns a MODS::Collection
 object.
+Parameters can be either a single argument representing a XML string or two 
+arguments with the first one determining what kind of value the second parameter
+contains: either a XML string, or an already opened file handle, or a file name,
+or an object of type XML::LibXML::Node (or a subtype).
+
+=head2 B<to_xml( Bool $format ) returns Str>
+
+Returns a XML string containing the serialised collection.
+If a TRUE value is provided as parameter the XML is nicely indented.
+The method is inherited from C<PRANG>.
 
 =head2 B<add_records( Array(MODS::Record) )>
 
@@ -90,6 +136,39 @@ Returns the number of records stored in the collection.
 =head2 B<is_empty() returns Bool>
 
 Returns TRUE if collection does not contain any records, FALSE otherwise.
+
+=head2 B<sort_by_pubdate( Bool $oldest_first ) returns Object>
+
+B<NOT YET IMPLEMENTED!>
+
+Internally sorts the records in the collection by publication date.
+Records without publication date are considered to be the oldest.
+If a TRUE value is provided as a parameter, the records are ordered
+in an ascending order with oldest records first.
+
+Return the MODS::Collection object so you could chain a call to
+C<all_records> or C<to_xml>.
+
+=head2 B<sort_by_title( Bool $descending ) returns Object>
+
+B<NOT YET IMPLEMENTED!>
+
+Internally sorts the records in the collection by publication title (A..Z).
+If a TRUE value is provided as a parameter, the records are ordered
+in an descending order (Z..A).
+
+Return the MODS::Collection object so you could chain a call to
+C<all_records> or C<to_xml>.
+
+=head2 B<sort( CodeRef $sortfunc ) returns Object>
+
+B<NOT YET IMPLEMENTED!>
+
+Internally sorts the records in the collection by using the given subroutine
+reference as comparator.
+
+Return the MODS::Collection object so you could chain a call to
+C<all_records> or C<to_xml>.
 
 =head1 AUTHOR
 
@@ -132,7 +211,6 @@ L<http://cpanratings.perl.org/d/MODS-Record>
 L<http://search.cpan.org/dist/MODS-Record/>
 
 =back
-
 
 =head1 ACKNOWLEDGEMENTS
 
