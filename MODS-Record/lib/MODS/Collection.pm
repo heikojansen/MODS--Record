@@ -4,9 +4,11 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use PRANG::Graph;
 
+use MODS::Record;
+
 =head1 NAME
 
-MODS::Collection - The great new MODS::Collection!
+MODS::Collection - Easily handle a collection of MODS records!
 
 =head1 VERSION
 
@@ -21,17 +23,21 @@ has_attr 'schemaLocation' => (
     isa => 'PRANG::XMLSchema::token',
     xmlns => 'http://www.w3.org/2001/XMLSchema-instance',
     xml_name => 'schemaLocation',
+    coerce => 1,
 );
 
 has_element 'records' => ( is           => 'rw',
                            isa          => 'ArrayRef[MODS::Record]',
                            xml_nodeName => { mods => "MODS::Record", },
-                           xml_min      => 1,
+                           xml_min      => 0,
                            traits       => ['Array'],
+                           default      => sub { [] },
                            handles      => {
-                                'get_records' => 'elements',
-                                'add_record'  => 'push',
-                                'has_records' => 'count',
+                                'all_records' => 'elements',
+                                'add_records' => 'push',
+                                'num_records' => 'count',
+                                'is_empty'    => 'is_empty',
+                                'clear'       => 'clear',
                             },
 );
 
@@ -41,14 +47,26 @@ with qw( PRANG::Graph MODS::Node );
 
 =head1 SYNOPSIS
 
-Quick summary of what the module does.
+This module allows you to work with collections of MODS records.
+It relies on the B<modsCollection> element as defined in the MODS schema.
 
-Perhaps a little code snippet.
+You can create new collections from scratch:
 
     use MODS::Collection;
 
-    my $foo = MODS::Collection->new();
-    ...
+    my $col = MODS::Collection->new();
+    $col->add_records(@recs);
+    say $col->num_records() . " in collection" if not $col->is_empty;
+    my @recs = $col->all_records();
+    $col->clear();
+
+Or you can parse and manipulate existing collections:
+
+    use MODS::Collection;
+
+    my $col = MODS::Collection->parse($str);
+    say $col->num_records() . " in collection" if ! $col->is_empty;
+
 
 =head1 SUBROUTINES/METHODS
 
@@ -57,19 +75,21 @@ Perhaps a little code snippet.
 Parses a XML string representing a modsCollection and returns a MODS::Collection
 object.
 
-=head2 B<add_record( MODS::Record $mods )>
+=head2 B<add_records( Array(MODS::Record) )>
 
-Adds an object of type MODS::Record to the collection.
+Adds one or more objects of type MODS::Record to the collection.
 
-=head2 B<get_records() returns Array>
+=head2 B<all_records() returns Array>
 
 Returns an array of all MODS::Record objects in the collection.
 
-=head2 B<has_records() returns Int>
+=head2 B<num_records() returns Int>
 
 Returns the number of records stored in the collection.
 
-=cut
+=head2 B<is_empty() returns Bool>
+
+Returns TRUE if collection does not contain any records, FALSE otherwise.
 
 =head1 AUTHOR
 

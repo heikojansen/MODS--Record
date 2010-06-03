@@ -9,8 +9,6 @@ use MODS::part::extent;
 use MODS::part::date;
 use MODS::part::text;
 
-with qw( MODS::Node );
-
 has_attr 'ID' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -42,5 +40,9 @@ has_element 'elems' => (
     },
     xml_min => 0,
 );
+
+sub root_element { 'part' };
+
+with qw( MODS::Role::TopLevelElement MODS::Node );
 
 1;

@@ -3,8 +3,6 @@ package MODS::recordInfo::descriptionStandard;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -17,5 +15,7 @@ has_attr 'authority' => (
     isa => 'PRANG::XMLSchema::token',
     coerce => 1,
 );
+
+with qw( MODS::Role::SingleArg MODS::Node );
 
 1;

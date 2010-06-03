@@ -11,8 +11,6 @@ use MODS::physicalDescription::extent;
 use MODS::physicalDescription::digitalOrigin;
 use MODS::physicalDescription::note;
 
-with qw( MODS::Type::languageAttrGrp MODS::Node );
-
 subtype 'MODS::physicalDescription::choice0' => as join('|', map { 'MODS::physicalDescription::' . $_ } qw( form reformattingQuality internetMediaType extent digitalOrigin note ) );
 
 has_element 'elems' => (
@@ -28,5 +26,9 @@ has_element 'elems' => (
     },
     xml_min => 1,
 );
+
+sub root_element { 'physicalDescription' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::languageAttrGrp MODS::Node );
 
 1;

@@ -3,12 +3,11 @@ package MODS::typeOfResource;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'MODS::Type::resource',
     xml_nodeName => '',
+    coerce => 1,
 );
 
 has_attr 'collection' => (
@@ -22,5 +21,9 @@ has_attr 'manuscript' => (
     isa => 'MODS::Type::yes',
     coerce => 1,
 );
+
+sub root_element { 'typeOfResource' };
+
+with qw( MODS::Role::TopLevelElement MODS::Role::SingleArg MODS::Node );
 
 1;

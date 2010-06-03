@@ -4,8 +4,6 @@ use Moose;
 use PRANG::Graph;
 use PRANG::XMLSchema::Whatever;
 
-with qw( MODS::Type::simpleLinkAttrGrp MODS::Type::languageAttrGrp MODS::Node );
-
 has_attr 'displayLabel' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -27,5 +25,9 @@ has_element 'text' => (
     },
     coerce => 1,
 );
+
+sub root_element { 'accessCondition' };
+
+with qw( MODS::Role::SingleArg MODS::Role::TopLevelElement MODS::Type::simpleLinkAttrGrp MODS::Type::languageAttrGrp MODS::Node );
 
 1;

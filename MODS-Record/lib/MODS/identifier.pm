@@ -3,8 +3,6 @@ package MODS::identifier;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Type::languageAttrGrp MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -29,5 +27,9 @@ has_attr 'invalid' => (
     isa => 'MODS::Type::yes',
     coerce => 1,
 );
+
+sub root_element { 'identifier' };
+
+with qw( MODS::Role::SingleArg MODS::Role::TopLevelElement MODS::Type::languageAttrGrp MODS::Node );
 
 1;

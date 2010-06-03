@@ -15,8 +15,6 @@ use MODS::subject::cartographics;
 use MODS::subject::occupation;
 use MODS::subject::genre;
 
-with qw( MODS::Type::simpleLinkAttrGrp MODS::Type::languageAttrGrp MODS::Node );
-
 has_attr 'ID' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -48,5 +46,9 @@ has_element 'elems' => ( is           => 'rw',
 												 genre                  => 'MODS::subject::genre',
 							   },
 );
+
+sub root_element { 'subject' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::simpleLinkAttrGrp MODS::Type::languageAttrGrp MODS::Node );
 
 1;

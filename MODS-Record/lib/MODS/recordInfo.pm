@@ -12,8 +12,6 @@ use MODS::recordInfo::languageOfCataloging;
 use MODS::recordInfo::recordOrigin;
 use MODS::recordInfo::descriptionStandard;
 
-with qw( MODS::Type::languageAttrGrp MODS::Node );
-
 subtype 'MODS::recordInfo::choice0' => as join('|', map { 'MODS::recordInfo::' . $_ } qw( recordContentSource recordCreationDate recordChangeDate recordIdentifier languageOfCataloging recordOrigin descriptionStandard ) );
 
 has_element 'elems' => (
@@ -29,5 +27,9 @@ has_element 'elems' => (
         descriptionStandard => 'MODS::recordInfo::descriptionStandard',
     },
 );
+
+sub root_element { 'recordInfo' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::languageAttrGrp MODS::Node );
 
 1;

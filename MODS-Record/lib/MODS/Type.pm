@@ -6,6 +6,8 @@ use warnings;
 use Moose::Util::TypeConstraints;
 use PRANG::XMLSchema::Types;
 
+BEGIN {
+
 subtype 'MODS::Type::internetMediaType' => as 'PRANG::XMLSchema::token' => where {
     $_ =~ m!^(application|audio|image|message|model|multipart|text|video|example)/\S+!o
 };
@@ -25,11 +27,8 @@ subtype 'MODS::Type::resource' => as 'PRANG::XMLSchema::token' => where {
 		or $_ eq '';
 };
 
-subtype 'MODS::Type::yes' => as 'Str' => where { $_ eq 'yes' };
-coerce 'MODS::Type::yes' => from 'Any' => via {
-	if ( defined($_) and $_ ) { return 'yes' }
-	return $_;
-};
+subtype 'MODS::Type::yes' => as 'Undef|Str' => where { not defined($_) or $_ eq 'yes' };
+coerce 'MODS::Type::yes' => from 'Str' => via { lc($_) }; 
 
 subtype 'MODS::Type::issuance' => as 'PRANG::XMLSchema::token' => where {
 	$_ eq 'continuing'
@@ -132,6 +131,8 @@ subtype 'MODS::Type::namePartType' => as 'PRANG::XMLSchema::token' => where {
 		or $_ eq 'family'
 		or $_ eq 'given'
 		or $_ eq 'termsOfAddress';
+};
+
 };
 
 1;

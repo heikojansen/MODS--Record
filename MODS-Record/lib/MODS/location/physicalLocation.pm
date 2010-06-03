@@ -3,8 +3,6 @@ package MODS::location::physicalLocation;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Type::languageAttrGrp MODS::Type::simpleLinkAttrGrp MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -30,5 +28,6 @@ has_attr 'displayLabel' => (
     coerce => 1,
 );
 
+with qw( MODS::Role::SingleArg MODS::Type::languageAttrGrp MODS::Type::simpleLinkAttrGrp MODS::Node );
 
 1;

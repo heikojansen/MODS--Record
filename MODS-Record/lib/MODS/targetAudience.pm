@@ -3,8 +3,6 @@ package MODS::targetAudience;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Type::languageAttrGrp MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -17,5 +15,9 @@ has_attr 'authority' => (
     isa => 'PRANG::XMLSchema::token',
     coerce => 1,
 );
+
+sub root_element { 'targetAudience' };
+
+with qw( MODS::Role::SingleArg MODS::Role::TopLevelElement MODS::Type::languageAttrGrp MODS::Node );
 
 1;

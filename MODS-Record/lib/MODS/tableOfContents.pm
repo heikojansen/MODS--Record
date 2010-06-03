@@ -3,6 +3,8 @@ package MODS::tableOfContents;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Type::unstructuredText MODS::Node );
+sub root_element { 'tableOfContents' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::unstructuredText MODS::Node );
 
 1;

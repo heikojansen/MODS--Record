@@ -3,8 +3,6 @@ package MODS::location;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'physicalLocation' => (
     is => 'rw',
     isa => 'ArrayRef[MODS::location::physicalLocation]',
@@ -34,5 +32,9 @@ has_element 'holdingExternal' => (
     isa => 'PRANG::XMLSchema::Whatever',
     xml_required => 0,
 );
+
+sub root_element { 'location' };
+
+with qw( MODS::Role::TopLevelElement MODS::Node );
 
 1;

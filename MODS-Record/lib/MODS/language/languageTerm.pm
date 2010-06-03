@@ -3,8 +3,6 @@ package MODS::language::languageTerm;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -23,5 +21,7 @@ has_attr 'type' => (
     isa => 'MODS::Type::codeOrText',
     coerce => 1,
 );
+
+with qw( MODS::Role::SingleArg MODS::Node );
 
 1;

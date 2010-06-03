@@ -4,31 +4,6 @@ use Moose;
 use Moose::Util::TypeConstraints;
 use PRANG::Graph;
 
-#use MODS::titleInfo;
-#use MODS::name;
-#use MODS::typeOfResource;
-#use MODS::genre;
-#use MODS::originInfo;
-#use MODS::language;
-#use MODS::physicalDescription;
-#use MODS::abstract;
-#use MODS::tableOfContents;
-#use MODS::targetAudience;
-#use MODS::note;
-#use MODS::subject;
-#use MODS::classification;
-#use MODS::relatedItem;
-#use MODS::identifier;
-#use MODS::location;
-#use MODS::accessCondition;
-#use MODS::part;
-#use MODS::extension;
-#use MODS::recordInfo;
-
-subtype 'MODS::relatedItem::choice0' => as join("|", map { "MODS::$_" } qw(titleInfo name typeOfResource genre originInfo language physicalDescription abstract tableOfContents targetAudience note subject classification relatedItem identifier location accessCondition part extension recordInfo));
-
-with qw( MODS::Type::simpleLinkAttrGrp MODS::Node );
-
 has_attr 'ID' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -49,7 +24,7 @@ has_attr 'type' => (
 
 has_element 'elems' => (
     is => 'rw',
-    isa => 'ArrayRef[MODS::relatedItem::choice0]',
+    isa => 'ArrayRef[MODS::Role::TopLevelElement]',
     xml_min => 0,
     traits => ['Array'],
     xml_nodeName => {
@@ -75,5 +50,9 @@ has_element 'elems' => (
         "recordInfo" => "MODS::recordInfo",
     },
 );
+
+sub root_element { 'relatedItem' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::simpleLinkAttrGrp MODS::Node );
 
 1;

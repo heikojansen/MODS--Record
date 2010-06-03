@@ -3,8 +3,6 @@ package MODS::location::url;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::anyURI',
@@ -35,5 +33,7 @@ has_attr 'useage' => (
     isa => 'MODS::Type::urlTypeUsage',
     coerce => 1,
 );
+
+with qw( MODS::Role::SingleArg MODS::Node );
 
 1;

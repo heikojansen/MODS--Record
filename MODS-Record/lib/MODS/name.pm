@@ -10,8 +10,6 @@ use MODS::name::affiliation;
 use MODS::name::role;
 use MODS::name::description;
 
-with qw( MODS::Type::languageAttrGrp MODS::Type::simpleLinkAttrGrp MODS::Node );
-
 has_attr 'type' => ( is => 'rw', isa => 'MODS::Type::nameType', coerce => 1, );
 
 has_attr 'ID' => ( is => 'rw', isa => 'PRANG::XMLSchema::token', coerce => 1, );
@@ -34,5 +32,9 @@ has_element 'nameElem' => ( is           => 'rw',
                             },
                             xml_min => 0,
 );
+
+sub root_element { 'name' };
+
+with qw( MODS::Role::TopLevelElement MODS::Type::languageAttrGrp MODS::Type::simpleLinkAttrGrp MODS::Node );
 
 1;

@@ -3,8 +3,6 @@ package MODS::recordInfo::languageOfCataloging::languageTerm;
 use Moose;
 use PRANG::Graph;
 
-with qw( MODS::Node );
-
 has_element 'text' => (
     is => 'rw',
     isa => 'PRANG::XMLSchema::token',
@@ -21,5 +19,7 @@ has_attr 'type' => (
     is => 'rw',
     isa => 'MODS::Type::codeOrText',
 );
+
+with qw( MODS::Role::SingleArg MODS::Node );
 
 1;

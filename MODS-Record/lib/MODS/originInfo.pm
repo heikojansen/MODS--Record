@@ -17,8 +17,6 @@ use MODS::originInfo::edition;
 use MODS::originInfo::issuance;
 use MODS::originInfo::frequency;
 
-with qw( MODS::Node );
-
 subtype 'MODS::originInfo::choice0' => as join( '|',
 												map { 'MODS::originInfo::' . $_ }
 													qw( place publisher dateIssued dateCreated dateCaptured dateValid dateModified copyrightDate dateOther edition issuance frequency )
@@ -41,5 +39,9 @@ has_element 'elems' => ( is           => 'rw',
 							  },
 							  xml_min => 1,
 );
+
+sub root_element { 'originInfo' };
+
+with qw( MODS::Role::TopLevelElement MODS::Node );
 
 1;

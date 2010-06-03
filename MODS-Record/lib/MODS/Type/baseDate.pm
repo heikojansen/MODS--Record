@@ -25,4 +25,6 @@ has_attr 'encoding' => (
     isa => 'MODS::Type::baseDateTypeEncoding',
 );
 
+with qw( MODS::Role::SingleArg );
+
 1;
