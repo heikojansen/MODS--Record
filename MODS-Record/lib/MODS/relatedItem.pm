@@ -22,6 +22,9 @@ has_attr 'type' => (
     coerce => 1,
 );
 
+has 'node_name' => ( is => 'rw', );
+has 'ns' => ( is => 'rw', );
+
 has_element 'elems' => (
     is => 'rw',
     isa => 'ArrayRef[MODS::Role::TopLevelElement]',
@@ -49,6 +52,8 @@ has_element 'elems' => (
         "extension" => "MODS::extension",
         "recordInfo" => "MODS::recordInfo",
     },
+    xml_nodeName_attr => 'node_name',
+    xmlns_attr => 'ns',
 );
 
 sub root_element { 'relatedItem' };
