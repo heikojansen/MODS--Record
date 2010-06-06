@@ -53,8 +53,8 @@ has_attr 'schemaLocation' => (
     coerce => 1,
 );
 
-has 'node_name' => ( is => 'rw', ); 
-has 'ns' => ( is => 'rw', ); 
+has 'node_name' => ( is => 'rw', traits => ['Array'], handles => { _delete_nn => 'delete', _push_nn => 'push', _clear_nn => 'clear', }, ); 
+has 'ns' => ( is => 'rw', traits => ['Array'], handles => { _delete_ns => 'delete', _push_ns => 'push', }, ); 
 has_element 'elems' => (
     is => 'rw',
     isa => 'ArrayRef[MODS::Role::TopLevelElement]',
@@ -86,9 +86,67 @@ has_element 'elems' => (
     xmlns_attr => 'ns',
     coerce => 1,
     handles => {
-        filter => 'grep',
+        _filter => 'grep',
+        _first => 'first',
+        _push => 'push',
+        _elements => 'elements',
+        _delete => 'delete',
+        _sort_in_place => 'sort_in_place',
     },
 );
+
+sub get_element {
+    my $self = shift;
+    my $elem = shift;
+
+    if ( ! wantarray ) {
+        return $self->_first( sub { $_->isa('MODS::' . $elem) } );
+    }
+    else {
+        return $self->_filter( sub { $_->isa('MODS::' . $elem) } );
+    }
+}
+
+sub add_element {
+    my $self = shift;
+    my $elem = shift;
+    my $data = shift;
+
+    die "Superfluos parameter in method call 'add_element'" if @_;
+
+    if ( index( ref($_[0]), 'MODS::' . $elem ) == 0 ) {
+        $self->_push( $data );
+        $self->_push_nn( $elem );
+        $self->_push_ns( undef );
+    } 
+    else {
+        my $obj = "MODS::$elem"->new($data);
+        $self->_push( $obj );
+        $self->_push_nn( $elem );
+        $self->_push_ns( undef );
+    }
+    return;
+}
+
+sub set_element {
+    my $self = shift;
+    my $elem = shift;
+
+    my $i = 0;
+    my @to_delete = ();
+    foreach ( $self->_elements() ) {
+        if ( $_->isa('MODS::' . $elem) ) {
+            unshift @to_delete, $i;
+        }
+        $i++;
+    }
+    foreach (@to_delete) {
+        $self->_delete($_);
+        $self->_delete_nn($_);
+        $self->_delete_ns($_);
+    }
+    $self->add_element( $elem, @_ );
+}
 
 # TODO This is ugly - find out if there's a better way
 sub BUILD {
@@ -183,6 +241,43 @@ around 'parse' => sub {
     return;
 };
 
+before 'to_xml' => sub {
+    my $self = shift;
+
+    my %f = (
+        "MODS::titleInfo" => 20,
+        "MODS::name" => 19,
+        "MODS::typeOfResource" => 18,
+        "MODS::genre" => 17,
+        "MODS::originInfo" => 16,
+        "MODS::language" => 15,
+        "MODS::physicalDescription" => 14,
+        "MODS::abstract" => 13,
+        "MODS::tableOfContents" => 12,
+        "MODS::targetAudience" => 11,
+        "MODS::note" => 10,
+        "MODS::subject" => 9,
+        "MODS::classification" => 8,
+        "MODS::relatedItem" => 7,
+        "MODS::identifier" => 6,
+        "MODS::location" => 5,
+        "MODS::accessCondition" => 4,
+        "MODS::part" => 3,
+        "MODS::extension" => 2,
+        "MODS::recordInfo" => 1
+    );
+
+    $self->_sort_in_place( sub { -1 * ( $f{ ref($_[0]) } <=> $f{ ref($_[1]) } ) } ); 
+    $self->_clear_nn();
+    foreach ( $self->_elements() ) {
+        my $ref = ref($_);
+        $self->_push_nn( substr( $ref, 6 ) );
+    }
+    use Data::Dumper;
+    warn Dumper($self);
+    return;
+};
+
 =head1 SYNOPSIS
 
 This module allows you to work with MODS records.
@@ -246,20 +341,6 @@ Returns a XML string containing the serialised collection.
 If a TRUE value is provided as parameter the XML is nicely indented.
 The method is inherited from C<PRANG>.
 
-=head2 get_elements
-
-...
-
-=cut
-
-sub get_elements {
-    my $self = shift;
-    my $elem = shift;
-
-    die "Invalid element name '$elem'" unless $elem =~ m/\A(titleInfo|name|typeOfResource|genre|originInfo|language|physicalDescription|abstract|tableOfContents|targetAudience|note|subject|classification|relatedItem|identifier|location|accessCondition|part|extension|recordInfo)\Z/o;
-    return [ $self->filter( sub { ref $_ eq "MODS::$elem" } ) ];
-}
-
 =head1 AUTHOR
 
 Heiko Jansen, C<< <hjansen at cpan.org> >>
@@ -269,8 +350,6 @@ Heiko Jansen, C<< <hjansen at cpan.org> >>
 Please report any bugs or feature requests to C<bug-mods-record at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=MODS-Record>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
-
-
 
 
 =head1 SUPPORT
