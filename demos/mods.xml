@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mods xmlns="http://www.loc.gov/mods/v3" xmlns:a="http://www.w3.org/2001/XMLSchema-instance" version="3.0" a:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+  <titleInfo>
+    <title>Sound and fury :</title>
+    <subTitle>the making of the punditocracy /</subTitle>
+  </titleInfo>
+  <name type="personal">
+    <namePart>Alterman, Eric</namePart>
+    <role>
+      <roleTerm type="text">creator</roleTerm>
+    </role>
+  </name>
+  <typeOfResource>text</typeOfResource>
+  <genre authority="marcgt">bibliography</genre>
+  <originInfo>
+    <place>
+      <placeTerm type="code" authority="marccountry">nyu</placeTerm>
+    </place>
+    <place>
+      <placeTerm type="text">Ithaca, N.Y</placeTerm>
+    </place>
+    <publisher>Cornell University Press</publisher>
+    <dateIssued>c1999</dateIssued>
+    <dateIssued encoding="marc">1999</dateIssued>
+    <issuance>monographic</issuance>
+  </originInfo>
+  <language>
+    <languageTerm type="code" authority="iso639-2b">eng</languageTerm>
+  </language>
+  <physicalDescription>
+    <form authority="marcform">print</form>
+    <extent>vii, 322 p. ; 23 cm.</extent>
+  </physicalDescription>
+  <note type="statement of responsibility">Eric Alterman.</note>
+  <note>Includes bibliographical references (p. 291-312) and index.</note>
+  <subject authority="lcsh">
+    <topic>Talk shows</topic>
+    <geographic>United States.</geographic>
+  </subject>
+  <classification authority="lcc">PN4888.P6 A48 1999</classification>
+</mods>

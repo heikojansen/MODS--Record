@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<modsCollection xmlns="http://www.loc.gov/mods/v3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-0.xsd">
+  <mods>
+    <titleInfo>
+      <title>Sound and fury :</title>
+      <subTitle>the making of the punditocracy /</subTitle>
+    </titleInfo>
+    <name type="personal">
+      <namePart>Alterman, Eric</namePart>
+      <role>
+        <roleTerm type="text">creator</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+  </mods>
+  <mods>
+    <titleInfo>
+      <title>Just a second record :</title>
+      <subTitle>with some stupid title /</subTitle>
+    </titleInfo>
+    <name type="personal">
+      <namePart>Doe, John</namePart>
+      <role>
+        <roleTerm type="text">creator</roleTerm>
+      </role>
+    </name>
+    <typeOfResource>text</typeOfResource>
+  </mods>
+</modsCollection>
