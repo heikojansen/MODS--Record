@@ -41,6 +41,8 @@ has_element 'records' => ( is           => 'rw',
                             },
 );
 
+with qw( PRANG::Graph MODS::Node );
+
 around 'parse' => sub {
     my $orig = shift;
     my $self = shift;
@@ -77,8 +79,6 @@ around 'parse' => sub {
 };
 
 sub root_element { return 'modsCollection'; }
-
-with qw( PRANG::Graph MODS::Node );
 
 =head1 SYNOPSIS
 
