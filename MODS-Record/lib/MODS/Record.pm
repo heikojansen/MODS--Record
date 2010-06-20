@@ -273,8 +273,6 @@ before 'to_xml' => sub {
         my $ref = ref($_);
         $self->_push_nn( substr( $ref, 6 ) );
     }
-    use Data::Dumper;
-    warn Dumper($self);
     return;
 };
 
