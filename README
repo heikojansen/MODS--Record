@@ -1,14 +1,6 @@
-MODS::Record is intended to become a Perl module to support
+MODS::Record  was intended to become a Perl module to support
 easy creation, parsing and manipulation of MODS records.
 
-The current state is PRE-ALPHA ! 
-
-When a certain level of maturity is reached, the module will
-be released to CPAN, too.
-
-This is - hopefully - going to be my first CPAN module.
-It is also my first encounter with Moose and PRANG.
-Any feedback with tips for improvement will therefore be
-highly appreciated...
-
-Heiko
+Unfortunately it´s currently on hiatus since I´m busy with other things.
+I still hope to be able to get back to this someday but can´t predict
+when and if that will happen...
